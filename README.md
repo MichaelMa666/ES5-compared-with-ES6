@@ -1,5 +1,5 @@
 # ES5-compared-with-ES6
-ECMAScript upgrade
-<br>**What is ES6**<br>
+<br>ECMAScript upgrade<br>
+<br>**What is ES6？**<br>
 <br>**ANS:**ECMAScript 2015(European Computer Manufactures Association 2015)一种脚本语言的标准<br>
 <br><br>
