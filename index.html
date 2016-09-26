@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>boom boom power</title>
+</head>
+<body>
+	<p>2016年9月26日09:39:59</p>
+	<p>TJ（天津）天气 晴 雾</p>
+</body>
+</html>
+<!-- ES6 Template literal 模板对象 + Enhanced Object literals(增强对象字面量)-->
+<script type="text/javascript">
+	var name="Michael Ma";
+	console.log(`Your name is ${name}`);
+	var obj_1={name:`${name}`,ID:'H7108025'},
+	    getVal=function(){return [1,2,3]};
+	var misc = {
+		    	__proto__:obj_1,
+		    	getVal,
+			getDate(){
+					date();
+				}
+			}
+	console.log(misc);
+</script>
+<!--ES5 Style transfer parameters -->
+<script type="text/javascript">
+	var logUpperCase = function(){
+		console.log(this.string)
+		var _this = this;
+		this.string = this.string.toUpperCase();
+		return function(){
+			// console.log(_this.string)
+			return console.log(_this.string);
+			// return console.log(this.string);
+		}
+	}
+	logUpperCase.call({string: 'Michael Ma'})();
+</script>
+<!--ES6 Style 箭头函数 '(参数)=>' 替代了 'function(参数)' 解决了参数传递的浪费时间的问题-->
+<script type="text/javascript">
+	var logUpperCase = function(){
+		this.string = this.string.toUpperCase();
+		return () => console.log(this.string);
+	}
+	logUpperCase.call( {string: 'Today is 2016:9:26'})();
+</script>
+<!-- ES5 Style -->
+<script type="text/javascript">
+	var ids = ['001','002'];
+	var msg = ids.map(function(val, index, list){
+		return 'ID of '+ index + ' element is ' + val+'';
+	})
+	console.log(msg);
+</script>
+<!-- ES6 Style Arrow function-->
+<script type="text/javascript">
+	var ids = ['003', '004'];
+	// var msg = ids.map((val, index, list) => 'ID of '+ index + ' element is '+ val);
+	var msg = ids.map((val, index, list) => `ID of ${index} element is ${val}`); 
+	console.log(msg)
+</script>
+<!-- Promises in ES6 -->
+<script type="text/javascript">
+	function helloWorld(ready){
+		return new Promise(function(resolve, reject){
+			if(ready){
+				resolve("hello world!");
+			}
+			else{
+				reject("good bye!")
+			}
+		});
+	}
+	helloWorld(true).then(function(message){
+		console.log(message);
+	},function(err){
+		console.log(err);
+	})
+</script>
